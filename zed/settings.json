@@ -1,0 +1,66 @@
+{
+  "ui_font_size": 14,
+  "buffer_font_size": 13,
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Mocha",
+    "dark": "One Dark"
+  },
+  "terminal": {
+    "font_family": "SauceCodePro Nerd Font Mono"
+  },
+  "languages": {
+    "YAML": {
+      "format_on_save": "off"
+    },
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    },
+    "Rust": {
+      "language_servers": ["rust-analyzer"]
+    }
+  },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 120,
+          "lint": {
+            "extendSelect": ["I"],
+            "preview": true
+          }
+        }
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "useParameterNames": true,
+            "enable": "skip_trivial"
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
+          }
+        }
+      }
+    }
+  }
+}
